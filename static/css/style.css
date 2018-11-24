@@ -1,0 +1,217 @@
+@font-face {
+     font-family: title;
+     src: url(../fonts/RobotoMono-Medium.ttf);
+     font-weight: 300;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: pNormal;
+     src: url(../../fonts/cmunrm.ttf);
+}
+
+@font-face {
+     font-family: pBold;
+     src: url(../../fonts/cmunbx.ttf);
+}
+
+@-webkit-keyframes animate {
+     0% {
+          -webkit-transform: translateY(100%)
+     }
+     100% {
+          -webkit-transform: translateY(0)
+     }
+}
+
+@keyframes animate {
+     0% {
+          transform: translateY(100%)
+     }
+     100% {
+          transform: translateY(0)
+     }
+}
+
+body, html {
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     font-smoothing: antialiased;
+     text-rendering: optimizeLegibility;
+     -webkit-tap-highlight-color: transparent !important;
+     cursor: url(../img/cursor1x.png) 6 6, default;
+     cursor: -webkit-image-set(url(../img/cursor1x.png) 1x, url(../img/cursor2x.png) 2x) 6 6, default;
+     padding: 0;
+     margin: 0;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none
+}
+
+a, a:after, a:visited {
+     background-color: transparent;
+     cursor: url(../img/cursor-fill1x.png) 6 6, auto;
+     cursor: -webkit-image-set(url(../img/cursor-fill1x.png) 1x, url(../img/cursor-fill2x.png) 2x) 6 6, auto;
+     text-decoration: none;
+     color: #000
+}
+
+::-webkit-scrollbar {
+     width: 3px;
+     height: 3px;
+     position: absolute
+}
+
+::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 0 transparent;
+     -webkit-border-radius: 0;
+     border-radius: 0
+}
+
+::-webkit-scrollbar-thumb {
+     -webkit-border-radius: 0;
+     border-radius: 0;
+     background: #000;
+     -webkit-box-shadow: inset 0 0 0 transparent
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+     background: #000
+}
+
+::selection {
+     background: #000;
+     color: #fff
+}
+
+::-moz-selection {
+     background: #000;
+     color: #fff
+}
+
+.paul {
+     background-size: contain;
+     max-width: 300px;
+}
+
+.planchon {
+     background-size: contain;
+}
+
+.text {
+     position: relative;
+     display: block;
+     overflow: hidden
+}
+
+.animate {
+     -webkit-animation: animate 1.2s cubic-bezier(.2, .6, .2, 1);
+     -moz-animation: animate 1.2s cubic-bezier(.2, .6, .2, 1);
+     animation: animate 1.2s cubic-bezier(.2, .6, .2, 1);
+     -webkit-animation-fill-mode: backwards;
+     -moz-animation-fill-mode: backwards;
+     animation-fill-mode: backwards
+}
+
+.delay {
+     -webkit-animation-delay: .3s;
+     animation-delay: .3
+}
+
+.about {
+     position: absolute;
+     top: 100vh;
+     left: 50%;
+     right: 10%;
+     padding-bottom: 150%;
+}
+
+h1, p {
+     color: #000
+}
+
+h1 {
+     font-size: 112px;
+     font-size: 7vw;
+     letter-spacing: -2px;
+     line-height: 105%;
+     font-family: title, monospace;
+     position: fixed;
+     top: 20%;
+     left: 10%;
+}
+
+h2 {
+     font-size: 32px;
+     font-size: 2.2vw;
+     line-height: 140%;
+     font-family: pBold;
+     margin-bottom: 10%
+}
+
+h3 {
+     font-size: 18px;
+     font-size: 1.2vw;
+     line-height: 140%;
+     font-family: pBold;
+     margin-bottom: 10px;
+}
+
+p {
+     font-size: 18px;
+     font-size: 1.0vw;
+     line-height: 120%;
+     font-family: pNormal;
+     margin-bottom: 8%
+}
+
+ul {
+     margin-bottom: 6%;
+     margin-left: 5%;
+}
+
+li {
+     font-size: 18px;
+     font-size: 1.0vw;
+     line-height: 120%;
+     font-family: pNormal;
+}
+
+b, a {
+     font-family: pBold;
+}
+
+@media screen and (max-width:800px) {
+     h1 {
+          font-size: 15vw
+     }
+     h2 {
+          font-size: 24px;
+          font-size: 6.4vw
+     }
+     h3 {
+          font-size: 18px;
+          font-size: 4.5vw;
+          font-family: pBold;
+     }
+     p {
+          font-size: 18px;
+          font-size: 4.8vw
+     }
+     ul {
+          margin-left: -5%;
+     }
+     li {
+          font-size: 18px;
+          font-size: 4vw;
+          line-height: 120%;
+          font-family: pNormal;
+     }
+     .about {
+          left: 0;
+          right: 0;
+          background: #fff;
+          padding: 10%
+     }
+}

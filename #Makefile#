@@ -1,0 +1,2 @@
+all:
+	gcc sts.c -o stsx
