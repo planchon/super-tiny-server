@@ -1,2 +1,2 @@
 all:
-	gcc sts.c -o sts
+	gcc sts.c -std=gnu11 -o sts

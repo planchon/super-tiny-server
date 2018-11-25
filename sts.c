@@ -52,7 +52,7 @@ struct {
 
 void server(int socket, int hit) {
 	long ret;
-	int webRequest, file, buflen;
+	int webRequest, file, buflen, i;
 	char * fstr;
 	static char buffer[BUFSIZE + 1];
 	
@@ -62,7 +62,7 @@ void server(int socket, int hit) {
 		(void) strcpy(buffer, "GET /index.html");
 	}
 
-	for(int i=4;i<BUFSIZE;i++) { /* null terminate after the second space to ignore extra stuff */
+	for(i=4;i<BUFSIZE;i++) { /* null terminate after the second space to ignore extra stuff */
 		if(buffer[i] == ' ') { /* string is "GET URL " +lots of other stuff */
 			buffer[i] = 0;
 			break;
@@ -71,7 +71,7 @@ void server(int socket, int hit) {
 
 	buflen=strlen(buffer);
 	fstr = (char *)0;
-	for(int i=0;extensions_mime[i].ext != 0;i++) {
+	for(i=0;extensions_mime[i].ext != 0;i++) {
 		long lenExt = strlen(extensions_mime[i].ext);
 		if( !strncmp(&buffer[buflen-lenExt], extensions_mime[i].ext, lenExt)) {
 			fstr = extensions_mime[i].filetype;
@@ -103,7 +103,7 @@ void server(int socket, int hit) {
 }
 
 int main(int argc, char** argv) {
-	int listenSocket, pip, clientSocket;
+	int listenSocket, pip, clientSocket, hit;
 	static struct sockaddr_in server_addr;
 	static struct sockaddr_in client_addr;
 	socklen_t clientLength = sizeof(client_addr);
@@ -143,7 +143,7 @@ int main(int argc, char** argv) {
 		exit(-1);		
 	}
 	
-	for (int hit = 1; ; hit++) {
+	for (hit = 1; ; hit++) {
 		
 		if ((clientSocket = accept(listenSocket, (struct sockaddr *) &client_addr, &clientLength)) < 0) {
 			printf("ERROR (%d) : Can't accept the socket. Closing on hit %d.\n", errno, hit);
