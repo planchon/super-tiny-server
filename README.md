@@ -1,5 +1,6 @@
 # Super Tiny Server
 [![Build Status](https://travis-ci.com/planchon/super-tiny-server.svg?branch=master)](https://travis-ci.com/planchon/super-tiny-server)
+
 A lightweight and light CPU consumtion web server. Written in C for performance. Can host static webpage without problem.
 ### Usage
 * `./sts` to start the server
