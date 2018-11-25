@@ -1,8 +1,8 @@
-# super-tiny-server
+# Super Tiny Server
 A lightweight and light CPU consumtion web server. Written in C for performance. Can host static webpage without problem.
-## Usage
+### Usage
 * `./sts` to start the server
 * `killall sts` to kill it (not very clean, working on it)
 
-## Example
+### Example
 Watch it live on http://planchon.io!
