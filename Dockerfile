@@ -12,4 +12,4 @@ RUN gcc sts.c -std=gnu11 -o sts
 # Make port 8080 available to the world outside this container
 EXPOSE 9191
 
-CMD [".sts"]
+CMD ["./sts"]
